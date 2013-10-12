@@ -7,7 +7,7 @@ Deploys are super fast and super simple.
 
 Add this line to your application's Gemfile:
 
-    gem 'capistrano-git'
+    gem 'capistrano-git_deploy'
 
 And then execute:
 
@@ -15,13 +15,13 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install capistrano-git
+    $ gem install capistrano-git_deploy
 
 ## Usage
 
     # Capfile
 
-    require 'capistrano/git'
+    require 'capistrano/git_deploy'
 
 ## Contributing
 
