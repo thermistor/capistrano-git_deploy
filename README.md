@@ -1,6 +1,7 @@
 # Capistrano::Git
 
-TODO: Write a gem description
+This uses just git to deploy and doens't have a releases directory.
+Deploys are super fast and super simple.
 
 ## Installation
 
@@ -18,7 +19,9 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+    # Capfile
+
+    require 'capistrano/git'
 
 ## Contributing
 
