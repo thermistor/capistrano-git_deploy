@@ -22,6 +22,10 @@ Or install it yourself as:
 
     require 'capistrano/git_deploy'
 
+## TODO
+
+* only precompile assets if something changed
+
 ## Contributing
 
 1. Fork it
