@@ -6,7 +6,7 @@ A simpler faster deploy strategy that just uses a single deployed git repo inste
 
 Add this line to your application's Gemfile:
 
-    gem 'capistrano-git_deploy'
+    gem 'capistrano-git_deploy', :github => 'thermistor/capistrano-git_deploy', :require => false
 
 And then execute:
 
