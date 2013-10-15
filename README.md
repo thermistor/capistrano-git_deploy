@@ -24,7 +24,10 @@ Or install it yourself as:
 
 ## TODO
 
-* only precompile assets if something changed
+* as per [this post](http://blog.codeclimate.com/blog/2013/10/02/high-speed-rails-deploys-with-git/)
+    * assets:precompile:if_changed, only precompile assets if something changed
+    * bundle:install:if_changed, similar for bundler
+    * deploy:verify
 
 ## Contributing
 
