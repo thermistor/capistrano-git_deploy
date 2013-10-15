@@ -1,7 +1,6 @@
 # Capistrano::Git
 
-This uses just git to deploy and doens't have a releases directory.
-Deploys are super fast and super simple.
+A simpler faster deploy strategy that just uses a single deployed git repo instead of multiple releases. It takes advantage of the Capistrano 3.0's new design.
 
 ## Installation
 
