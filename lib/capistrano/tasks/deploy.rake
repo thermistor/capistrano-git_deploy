@@ -1,5 +1,7 @@
 namespace :deploy do
 
+  # framework hooks
+
   task :starting do
     invoke 'deploy:check'
     invoke 'deploy:symlink:shared'
@@ -17,6 +19,8 @@ namespace :deploy do
   task :publishing do
     invoke 'deploy:restart'
   end
+
+  # supporting tasks
 
   desc 'Check required files and directories exist'
   task :check do
