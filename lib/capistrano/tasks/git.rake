@@ -5,7 +5,8 @@ namespace :git do
     on roles :app do
       within release_path do
         execute :git, :checkout, '--', 'db/schema.rb', 'Gemfile.lock'
-        execute :git, :checkout, "origin/#{(fetch(:branch) || fetch(:stage))}"
+        execute :git, :fetch
+        execute :git, :checkout, (fetch(:branch) || fetch(:stage))
         execute :git, :pull
       end
     end
