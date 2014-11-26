@@ -16,7 +16,7 @@ namespace :git do
   task :'rev-parse' do
     on roles :app do
       within release_path do
-        execute :git, :'rev-parse', 'HEAD', '|', "GREP_COLORS='ms=34;1'", 'grep', '$(git rev-parse --short=0 HEAD)'
+        execute :git, :'rev-parse', '--short=0', 'HEAD'
       end
     end
   end
