@@ -12,4 +12,13 @@ namespace :git do
     end
   end
 
+  desc 'Show hash of what is deployed, colour is min chars to uniquely identify'
+  task :'rev-parse' do
+    on roles :app do
+      within release_path do
+        execute :git, :'rev-parse', 'HEAD', '|', "GREP_COLORS='ms=34;1'", 'grep', '$(git rev-parse --short=0 HEAD)'
+      end
+    end
+  end
+
 end
