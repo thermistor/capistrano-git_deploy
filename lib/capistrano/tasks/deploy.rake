@@ -11,6 +11,7 @@ namespace :deploy do
     invoke 'git:pull'
   end
 
+  # TODO: conform to upstream API
   task :publishing do
     invoke 'deploy:restart'
   end

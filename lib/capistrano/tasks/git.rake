@@ -4,7 +4,11 @@ namespace :git do
   task :pull do
     on roles :app do
       within release_path do
-        execute :git, :checkout, '--', 'db/schema.rb', 'Gemfile.lock'
+        files_to_restore = %w(Gemfile.lock)
+        on roles :db do
+          files_to_restore.push('db/schema.rb')
+        end
+        execute :git, :checkout, '--', *files_to_restore
         execute :git, :fetch
         execute :git, :checkout, (fetch(:branch) || fetch(:stage))
         execute :git, :pull
