@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |gem|
   gem.name          = "capistrano-git_deploy"
-  gem.version       = '0.0.4'
+  gem.version       = '0.0.5'
   gem.authors       = ["Weston Triemstra"]
   gem.email         = ["weston@netsign.com"]
   gem.description   = %q{Capistrano deploys with git}
@@ -16,5 +16,5 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
 
-  gem.add_dependency 'capistrano', '>= 3.0.0'
+  gem.add_dependency 'capistrano', '>= 3.11.0'
 end
