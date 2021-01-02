@@ -18,9 +18,31 @@ Or install it yourself as:
 
 ## Usage
 
-    # Capfile
+Update your `Capfile`
 
+
+    # Capfile, comment out existing deploy strategy
+    # require 'capistrano/deploy'
+    # add this line:
     require 'capistrano/git_deploy'
+
+Then deploy as usual:
+
+    cap staging deploy
+
+### Utility methods
+
+Overwrite currently deployment with what is in the repo. This is what is used during deployment.
+
+    cap staging git:reset_hard
+
+You can see what is currently deployed. This shows what git ref is currently deployed with the shortest possible unique string:
+
+    cap staging git:rev-parse
+
+Just pull down new code. Note, this doesn't restart servers.
+
+    cap staging git:pull
 
 ## TODO
 
