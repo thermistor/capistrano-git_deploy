@@ -26,7 +26,7 @@ namespace :deploy do
   end
 
   task :updating do
-    invoke 'git:pull'
+    invoke 'git:reset_hard'
   end
 
   task :publishing do

@@ -1,5 +1,4 @@
 namespace :git do
-
   desc 'Deploy via git pull'
   task :pull do
     on roles :app do
@@ -16,6 +15,15 @@ namespace :git do
     end
   end
 
+  desc 'Deploy via git reset --hard'
+  task :reset_hard do
+    on roles :app do
+      within release_path do
+        execute :git, :reset, "--hard origin/#{fetch(:branch) || fetch(:stage)}"
+      end
+    end
+  end
+
   desc 'Show hash of what is deployed, colour is min chars to uniquely identify'
   task :'rev-parse' do
     on roles :app do
@@ -24,5 +32,4 @@ namespace :git do
       end
     end
   end
-
 end
