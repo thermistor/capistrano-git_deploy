@@ -20,6 +20,7 @@ namespace :git do
     on roles :app do
       within release_path do
         execute :git, :reset, "--hard origin/#{fetch(:branch) || fetch(:stage)}"
+        execute :git, :pull
       end
     end
   end
