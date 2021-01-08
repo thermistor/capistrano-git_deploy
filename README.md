@@ -32,7 +32,7 @@ Then deploy as usual:
 
 ### Utility methods
 
-Overwrite currently deployment with what is in the repo. This is what is used during deployment.
+Overwrite current deployment with what is in the repo. This is what is used by default during deployment:
 
     cap staging git:reset_hard
 
@@ -40,7 +40,7 @@ You can see what is currently deployed. This shows what git ref is currently dep
 
     cap staging git:rev-parse
 
-Just pull down new code. Note, this doesn't restart servers.
+Just pull down new code:
 
     cap staging git:pull
 
