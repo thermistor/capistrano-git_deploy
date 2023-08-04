@@ -25,11 +25,20 @@ namespace :git do
     end
   end
 
-  desc 'Show hash of what is deployed, colour is min chars to uniquely identify'
+  desc 'Show hash of what is deployed, min chars to uniquely identify'
   task :'rev-parse' do
     on roles :app do
       within release_path do
         execute :git, :'rev-parse', '--short=0', 'HEAD'
+      end
+    end
+  end
+
+  desc 'Show what commit is currently deployed'
+  task :deployed do
+    on roles :app do
+      within release_path do
+        execute :git, :log, "--color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev --date=iso -1"
       end
     end
   end
