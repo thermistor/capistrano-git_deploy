@@ -133,6 +133,15 @@ namespace :deploy do
     end
   end
 
+  desc "Place a REVISION_TIME file with the current revision commit time in the current release path"
+  task :set_current_revision_time do
+    on release_roles(:all) do
+      within release_path do
+        execute :echo, "\"#{fetch(:current_revision_time)}\" > REVISION_TIME"
+      end
+    end
+  end
+
   task :set_previous_revision do
     on release_roles(:all) do
       target = release_path.join("REVISION")

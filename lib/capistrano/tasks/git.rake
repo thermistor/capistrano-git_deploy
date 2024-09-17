@@ -42,4 +42,13 @@ namespace :git do
       end
     end
   end
+
+  desc 'Determine the unix timestamp that the revision that will be deployed was created'
+  task :set_current_revision_time do
+    on roles :app do
+      within release_path do
+        execute :git, "--no-pager log -1 --pretty=format:\"%ct\" #{fetch(:branch)}"
+      end
+    end
+  end
 end
